@@ -1,0 +1,6 @@
+node_modules/
+.env
+*.log
+uploads/
+dist/
+CICD_Postman_collection.json
