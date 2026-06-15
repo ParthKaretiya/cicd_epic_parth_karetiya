@@ -1,122 +1,306 @@
-# 🚀 Enterprise CI/CD Platform REST API
+# 🚀 Enterprise CI/CD Platform
 
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge\&logo=node.js\&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge\&logo=react\&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge\&logo=vite\&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge\&logo=mongodb\&logoColor=white)
 
-This is a production-ready, full-featured backend system built with **Node.js**, **Express**, and **MongoDB**. 
+A full-stack Enterprise CI/CD Platform built using **React, Node.js, Express, and MongoDB**.
 
-It provides the "backend brain" for a CI/CD platform, designed to help DevOps engineers and software developers manage automated workflows, store infrastructure documentation, monitor system health, and provide deep configuration analytics.
+The platform helps DevOps engineers and software developers manage CI/CD workflows, monitor infrastructure, validate YAML configurations, and access infrastructure documentation through a modern web dashboard.
 
 ---
 
-## ✨ Core Features
+## ✨ Features
 
-* **Pipeline Management:** Trigger, cancel, clone, and track automated CI/CD workflows.
-* **Infrastructure Hub:** Centralized storage for DevOps documentation (Kubernetes, Terraform, Docker, etc.).
-* **Active Monitoring & Alerts:** Track system metrics (CPU, Memory, Uptime) and trigger automated alerts.
-* **YAML Tooling:** Built-in endpoints to validate, convert, and format YAML configuration files.
-* **Full-Text Search:** Advanced search algorithms to quickly find workflows and guides.
-* **Robust Security:** JWT authentication, Helmet headers, CORS protection, and DDoS mitigation via Rate Limiting.
+### 🔐 Authentication System
+
+* JWT-based Authentication
+* Secure Login & Logout
+* Protected Routes
+* Context API State Management
+
+### 📊 Dashboard
+
+* Centralized platform overview
+* Workflow insights
+* Infrastructure monitoring access
+* Quick navigation to platform modules
+
+### ⚙️ Workflow Management
+
+* Trigger workflows
+* Clone existing workflows
+* Cancel running workflows
+* Track workflow status
+* Search workflows efficiently
+
+### 📚 Infrastructure Guides
+
+* Store and manage DevOps documentation
+* Kubernetes Guides
+* Docker Guides
+* Terraform Guides
+* Infrastructure best practices
+
+### 📈 Monitoring & Alerts
+
+* CPU monitoring
+* Memory monitoring
+* Uptime tracking
+* Alert generation system
+
+### 📄 YAML Tools
+
+* YAML validation
+* YAML formatting
+* YAML conversion utilities
+* Configuration analysis
+
+### 🎨 Modern Frontend
+
+* React + Vite Architecture
+* Responsive Sidebar Navigation
+* Interactive Dashboard
+* Clean UI Components
+* Modular Component Structure
+
+### 🔒 Security
+
+* JWT Authentication
+* Helmet Security Headers
+* CORS Protection
+* Rate Limiting
+* Password Hashing using bcrypt
 
 ---
 
 ## 🛠️ Technology Stack
 
-1. **Runtime & Framework:** Node.js + Express
-2. **Database:** MongoDB Atlas (Mongoose ORM)
-3. **Format Support:** `js-yaml` 
-4. **Security & Utilities:** `helmet`, `cors`, `express-rate-limit`, `express-validator`, `bcryptjs`, `jsonwebtoken`
+### Frontend
+
+* React.js
+* Vite
+* Context API
+* CSS
+
+### Backend
+
+* Node.js
+* Express.js
+
+### Database
+
+* MongoDB Atlas
+* Mongoose
+
+### Security & Utilities
+
+* JWT
+* bcryptjs
+* helmet
+* cors
+* express-rate-limit
+* express-validator
+* js-yaml
 
 ---
 
-## 📂 File Structure
-
-For a minimal, clean deployment, the project relies on the following core directories:
+## 📂 Project Structure
 
 ```text
-/config       - Database connections and environment setups
-/controllers  - Core business logic and endpoint handlers
-/middleware   - Security guards (JWT), error handlers, validations
-/models       - Mongoose NoSQL schemas
-/routes       - API routing definitions
-/services     - Extracted business logic and helper functions
-/utils        - Reusable utility functions
-server.js     - Main Express entry point
+project-root
+│
+├── Backend
+│   ├── config
+│   ├── controllers
+│   ├── middleware
+│   ├── models
+│   ├── routes
+│   ├── services
+│   ├── utils
+│   └── server.js
+│
+├── Frontend
+│   ├── public
+│   ├── src
+│   │   ├── assets
+│   │   ├── components
+│   │   ├── context
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   └── vite.config.js
+│
+└── README.md
 ```
 
 ---
 
-## 🚀 Quick Start Guide (Local Development)
+## 🚀 Frontend Modules
 
-### 1. Installation
-Install the necessary node packages:
+### Landing Page
+
+* Platform introduction
+* Hero section
+* Feature highlights
+
+### Dashboard
+
+* CI/CD Platform overview
+* Module navigation
+
+### Infrastructure Guides
+
+* DevOps documentation hub
+
+### Monitoring
+
+* Infrastructure monitoring interface
+
+### Workflow Management
+
+* Workflow tracking and execution
+
+### YAML Tools
+
+* Configuration management tools
+
+### Sidebar Navigation
+
+* Easy access to all modules
+
+---
+
+## 🚀 Backend API Modules
+
+### Authentication
+
+```http
+/api/v1/auth
+```
+
+### Workflows
+
+```http
+/api/v1/workflows
+```
+
+### Infrastructure Guides
+
+```http
+/api/v1/infra
+```
+
+### Monitoring
+
+```http
+/api/v1/monitoring
+```
+
+### YAML Utilities
+
+```http
+/api/v1/yaml
+```
+
+---
+
+## ⚙️ Local Setup
+
+### Clone Repository
+
 ```bash
+git clone <repository-url>
+cd project-name
+```
+
+### Backend Setup
+
+```bash
+cd Backend
 npm install
 ```
 
-### 2. Environment Setup
-Create a `.env` file in the root directory and configure the following variables:
+Create `.env`
+
 ```env
 PORT=5000
 NODE_ENV=development
-MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/database
-JWT_SECRET=your_super_secret_key
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_secret_key
 RATE_LIMIT_MAX=1000
 ```
 
-### 3. Running the Server
+Run Backend
+
 ```bash
-# For development with nodemon hot-reload
 npm run dev
-
-# For production
-npm start
 ```
-The server will boot up at `http://localhost:5000`.
 
 ---
 
-## ☁️ Deployment Guide (Render)
+### Frontend Setup
 
-This API is fully optimized for deployment on cloud providers like [Render](https://render.com).
+```bash
+cd Frontend
+npm install
+npm run dev
+```
 
-1. **Push to GitHub:** Ensure your code (without `.env` or `node_modules`) is pushed to a GitHub repository.
-2. **Connect to Render:** Log into Render and click **New Web Service**.
-3. **Select Repository:** Choose your GitHub repository.
-4. **Configure Settings:**
-   * **Build Command:** `npm install`
-   * **Start Command:** `npm start`
-5. **Environment Variables:** In the Render dashboard, copy all values from your local `.env` file into the Environment Variables section.
-6. **Deploy:** Click **Create Web Service**. Render will automatically build and host your API.
+Frontend runs on:
+
+```text
+http://localhost:5173
+```
+
+Backend runs on:
+
+```text
+http://localhost:5000
+```
+
+---
+
+## 📬 API Documentation
+
+### Postman Collection
+
+🔗 https://documenter.getpostman.com/view/50839329/2sBXwntsU4
+
+Includes:
+
+* Authentication APIs
+* Workflow APIs
+* Infrastructure APIs
+* Monitoring APIs
+* YAML Tool APIs
+* Sample Requests & Responses
 
 ---
 
-## 🌐 API Documentation
+## 🎯 Key Highlights
 
-Detailed API documentation and sample requests can be tested using the generated Postman Collection. 
-Once the server is running (locally or deployed), use Postman to import the collection and interact with the endpoints:
-
-* **Workflows:** `/api/v1/workflows`
-* **Infrastructure Guides:** `/api/v1/infra`
-* **Authentication:** `/api/v1/auth`
-* **Monitoring & Alerts:** `/api/v1/monitoring`
-* **YAML Utilities:** `/api/v1/yaml`
-
-* ### 📬 Postman API Collection
-
-Explore and test all API endpoints using the official Postman documentation:
-
-🔗 [View Postman Documentation](https://documenter.getpostman.com/view/50839329/2sBXwntsU4)
-
-The collection includes:
-- Authentication APIs
-- Workflow Management APIs
-- Infrastructure APIs
-- Monitoring & Alert APIs
-- YAML Utility APIs
-- Sample requests & responses
+* Full Stack Enterprise Project
+* React Frontend + Express Backend
+* MongoDB Database Integration
+* JWT Authentication
+* CI/CD Workflow Management
+* Infrastructure Monitoring
+* YAML Configuration Tools
+* Production Ready Architecture
+* Clean Modular Codebase
 
 ---
-*Built with ❤️ for DevOps & Automation.*
+
+## 👨‍💻 Author
+
+**Parth Karetiya**
+
+Computer Science Engineering Student | Full Stack Developer | DevOps Enthusiast
+
+Actively building projects, solving DSA problems, and sharing coding knowledge through GitHub, LinkedIn, and YouTube.
+
+---
+
+⭐ If you found this project useful, consider giving it a star.
